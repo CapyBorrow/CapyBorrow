@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieSession from "cookie-session";
 import passport from 'passport';
+import './passport-setup.js';
 
 // Init App so we can use Express. (Now we can use different methods on the app instance.)
 const app = express();
@@ -26,6 +27,9 @@ app.use(passport.session());
 
 app.use(cors());
 
+app.get('/home', (req, res) => {
+	res.send("You have logged in with google.")
+})
 // Connecting with application using express middleware
 //app.use("/routename", function);
 

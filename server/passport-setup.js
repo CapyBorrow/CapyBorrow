@@ -1,6 +1,6 @@
 import passport from 'passport';
-import { GoogleStrategy, Strategy } from 'passport-google-oauth20';
-import User from '../models/user-model';
+import GoogleStrategy from "passport-google-oauth20";
+import User from './models/user.js';
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -15,8 +15,8 @@ passport.deserializeUser((id, done) => {
 passport.use(
     new GoogleStrategy({
         // options for google strategy
-        clientID: keys.google.clientID,
-        clientSecret: keys.google.clientSecret,
+        clientID: '398514112184-ag8lj08a932i62q8jevm2ggm88t804j5.apps.googleusercontent.com',
+        clientSecret: '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',
         callbackURL: '/auth/google/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
@@ -30,7 +30,7 @@ passport.use(
                 new User({
                     googleId: profile.id,
                     username: profile.displayName,
-                    thumbnail: profile._json.image.url
+                    //thumbnail: profile._json.image.url
                 }).save().then((newUser) => {
                     console.log('created new user: ', newUser);
                     done(null, newUser);
