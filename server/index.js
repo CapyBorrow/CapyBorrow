@@ -1,8 +1,10 @@
 import express from "express";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
+import authRoutes from './routes/auth.js';
 import mongoose from "mongoose";
 import cors from "cors";
-const cookieSession = require("cookie-session");
+import cookieSession from "cookie-session";
+import passport from 'passport';
 
 // Init App so we can use Express. (Now we can use different methods on the app instance.)
 const app = express();
@@ -47,4 +49,7 @@ mongoose
 		console.log("An error occurred connecting to mongo.", err);
 	});
 
-app.listen(5000, () => console.log("Listening on PORT:", PORT));
+//ROUTES:
+app.use("/auth", authRoutes);
+
+app.listen(PORT, () => console.log("Listening on PORT:", PORT));
