@@ -7,10 +7,21 @@ const cookieSession = require("cookie-session");
 // Init App so we can use Express. (Now we can use different methods on the app instance.)
 const app = express();
 
-// BodyParser
-app.use(bodyParser.json({ limit: "30mb", extended: true }));
-app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(express.json());
+
+app.use(
+	cookieSession({
+		maxAge: 1000 * 60 * 60 * 24 * 7,
+		keys: [process.env.COOKIE_KEY],
+	})
+);
+app.use(passport.initialize());
+app.use(passport.session());
+// // BodyParser
+// app.use(bodyParser.json({ limit: "30mb", extended: true }));
+// app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 // Enable cross origin requests.
+
 app.use(cors());
 
 // Connecting with application using express middleware
