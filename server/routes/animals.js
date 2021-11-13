@@ -1,10 +1,13 @@
-import express from "express";
+const express = require("express");
 
-var petfinder = require('pet-finder-api')('VqZLSPakyBxQLZZgwUZ1W0WRB6EPXYlt1EoMqCneAYUxQxGXTZ','FhUD4JVrS9Wxyt1ICWKBojU2iqu4wilBRsWz6JBY')
+const petfinder = require('pet-finder-api')('api_key', 'api_secret');
 
-const petFinderRoutes= express.Router();
-petFinderRoutes.get('/search',(req,res)=>{
-    res.send(petfinder.findPet())
+const petFinderRoutes = express.Router();
+
+petFinderRoutes.get('/search', (req, res) => {
+    res.send(petfinder.findPet('dog', (x) => {
+        console.log(x);
+    }))
 })
 
-export default petFinderRoutes
+module.exports = petFinderRoutes;

@@ -1,5 +1,5 @@
-import express from "express";
-import passport from 'passport';
+const express = require("express");
+const passport = require('passport');
 
 const authRoutes = express.Router();
 
@@ -23,5 +23,5 @@ authRoutes.get('/google/redirect', passport.authenticate('google'), (req, res) =
 });
 
 
-export default authRoutes;
+module.exports = authRoutes;
 
