@@ -1,12 +1,12 @@
 import express from "express";
 // import bodyParser from "body-parser";
 import authRoutes from './routes/auth.js';
+import petFinderRoutes from "./routes/animals.js";
 import mongoose from "mongoose";
 import cors from "cors";
 import cookieSession from "cookie-session";
 import passport from 'passport';
 import './passport-setup.js';
-
 // Init App so we can use Express. (Now we can use different methods on the app instance.)
 const app = express();
 
@@ -55,5 +55,6 @@ mongoose
 
 //ROUTES:
 app.use("/auth", authRoutes);
-
+app,use("/pets",petFinderRoutes)
 app.listen(PORT, () => console.log("Listening on PORT:", PORT));
+
