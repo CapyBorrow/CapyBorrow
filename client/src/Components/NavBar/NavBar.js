@@ -1,15 +1,14 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import Drawer from '@mui/material/Drawer';
 
 import './NavBar.css';
 
 class NavBar extends React.Component {
     render() {
         return (
-            <AppBar positon="static">
-                <Toolbar>NavBar</Toolbar>
-            </AppBar>
+            <Drawer positon="static">
+                test
+            </Drawer>
         );
     }
 };
