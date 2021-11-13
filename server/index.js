@@ -35,7 +35,7 @@ app.get('/home', (req, res) => {
 //app.use("/routename", function);
 
 // Connection to the DB
-const CONNECTION_URI = "mongodb+srv://Mark:3qEsCy06JOKX4hDYzLesNPoCa4T6R1uw@cluster0.tih4o.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const CONNECTION_URI = process.env.MONGO_URI;
 // Port is hardcoded for now. Once we connect to heroku, they will make the ENV variable 'PORT'.
 const PORT = process.env.PORT || 6868;
 
