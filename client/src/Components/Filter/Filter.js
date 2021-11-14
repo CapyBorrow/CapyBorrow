@@ -7,214 +7,121 @@ import Select from '@mui/material/Select';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
 import './Filter.css';
 
-function SelectLabelsSpecies() {
+
+export default function Filter(props) {
 	const [species, setSpecies] = React.useState('');
-
-	const handleChange = (event) => {
-		setSpecies(event.target.value);
-	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Species</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={species} label='Species' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
-
-function SelectLabelsBreed() {
-	const [breed, setBreed] = React.useState('');
-
-	const handleChange = (event) => {
-		setBreed(event.target.value);
-	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Breed</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={breed} label='Breed' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
-
-function SelectLabelsAge() {
 	const [age, setAge] = React.useState('');
-
-	const handleChange = (event) => {
-		setAge(event.target.value);
-	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={age} label='Age' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
-
-function SelectLabelsSize() {
 	const [size, setSize] = React.useState('');
-
-	const handleChange = (event) => {
-		setSize(event.target.value);
-	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Size</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={size} label='Size' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
-
-function SelectLabelsGender() {
 	const [gender, setGender] = React.useState('');
+	const [URL, setURL] = React.useState('http://localhost:6868/pets/search?');
 
-	const handleChange = (event) => {
-		setGender(event.target.value);
+
+
+	const getNewUrl = () => {
+
+		let newUrl = 'http://localhost:6868/pets/search?';
+		if (species)
+			newUrl += 'type=' + species + '&';
+		if (age)
+			newUrl += 'age=' + age + '&';
+		if (size)
+			newUrl += 'size=' + size + '&';
+		if (gender)
+			newUrl += 'gender=' + gender + '&';
+		setURL(newUrl);
+		console.log('new url in child', newUrl);
+		props.passChildData(newUrl);
+	}
+
+	const handleSpeciesChange = (event) => {
+		console.log("species change")
+		if (event.target.value === "None")
+			setSpecies('');
+		else
+			setSpecies(event.target.value);
+		getNewUrl();
 	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Gender</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={gender} label='Gender' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
 
-function SelectLabelsColor() {
-	const [color, setColor] = React.useState('');
-
-	const handleChange = (event) => {
-		setColor(event.target.value);
+	const handleAgeChange = (event) => {
+		console.log("age change")
+		if (event.target.value === "None")
+			setAge('');
+		else
+			setAge(event.target.value);
+		getNewUrl();
 	};
-	return (
-		<div>
-			<FormControl sx={{ m: 2, minWidth: 200 }}>
-				<InputLabel id='demo-simple-select-helper-label'>Color</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={color} label='Color' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={"Dog"}>Dog</MenuItem>
-					<MenuItem value={"Cat"}>Cat</MenuItem>
-					<MenuItem value={"Furry"}>Furry</MenuItem>
-				</Select>
-			</FormControl>
-		</div>
-	);
-}
 
-{/*             
-            <FormControl sx={{m: 2, minWidth: 200}}>
-				<InputLabel id='demo-simple-select-helper-label'>Breed</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={breed} label='Breed' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
-				</Select>
-			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 200}}>
-				<InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={age} label='Age' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
-				</Select>
-			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 200}}>
-				<InputLabel id='demo-simple-select-helper-label'>Size</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={size} label='Size' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
-				</Select>
-			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 200}}>
-				<InputLabel id='demo-simple-select-helper-label'>Gender</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={gender} label='Gender' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
-				</Select>
-			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 200}}>
-				<InputLabel id='demo-simple-select-helper-label'>Color</InputLabel>
-				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={color} label='Color' onChange={handleChange}>
-					<MenuItem value=''>
-						<em>None</em>
-					</MenuItem>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
-				</Select>
-			</FormControl> */}
+	const handleSizeChange = (event) => {
+		console.log("size change")
+		if (event.target.value === "None")
+			setSize('');
+		else
+			setSize(event.target.value);
+		getNewUrl();
+	};
 
+	const handleGenderChange = (event) => {
+		console.log("gender change")
+		if (event.target.value === "None")
+			setGender('');
+		else
+			setGender(event.target.value);
+		getNewUrl();
+	};
 
-const Filter = () => {
 	return (
 		<Card className="horizontalform">
-			<SelectLabelsSpecies />
-			<SelectLabelsBreed />
-			<SelectLabelsAge />
-			<SelectLabelsSize />
-			<SelectLabelsGender />
-			<SelectLabelsColor />
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
+				<InputLabel id='demo-simple-select-helper-label'>Species</InputLabel>
+				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={species} label='Species' onChange={handleSpeciesChange}>
+					<MenuItem value=''>
+						<em>None</em>
+					</MenuItem>
+					<MenuItem value={"dog"}>Dog</MenuItem>
+					<MenuItem value={"cat"}>Cat</MenuItem>
+					<MenuItem value={"barnyard"}>Barnyard</MenuItem>
+					<MenuItem value={"horse"}>Horse</MenuItem>
+					<MenuItem value={"bird"}>Bird</MenuItem>
+					<MenuItem value={"rabbit"}>Rabbit</MenuItem>
+					<MenuItem value={"small-furry"}>Small & Furry</MenuItem>
+				</Select>
+			</FormControl>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
+				<InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
+				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={age} label='Age' onChange={handleAgeChange}>
+					<MenuItem value=''>
+						<em>None</em>
+					</MenuItem>
+					<MenuItem value={"baby"}>Baby</MenuItem>
+					<MenuItem value={"young"}>Young</MenuItem>
+					<MenuItem value={"adult"}>Adult</MenuItem>
+					<MenuItem value={"senior"}>Senior</MenuItem>
+				</Select>
+			</FormControl>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
+				<InputLabel id='demo-simple-select-helper-label'>Size</InputLabel>
+				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={size} label='Size' onChange={handleSizeChange}>
+					<MenuItem value=''>
+						<em>None</em>
+					</MenuItem>
+					<MenuItem value={"small"}>Small</MenuItem>
+					<MenuItem value={"medium"}>Medium</MenuItem>
+					<MenuItem value={"large"}>Large</MenuItem>
+					<MenuItem value={"xlarge"}>XLarge</MenuItem>
+				</Select>
+			</FormControl>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
+				<InputLabel id='demo-simple-select-helper-label'>Gender</InputLabel>
+				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={gender} label='Gender' onChange={handleGenderChange}>
+					<MenuItem value=''>
+						<em>None</em>
+					</MenuItem>
+					<MenuItem value={"male"}>Male</MenuItem>
+					<MenuItem value={"female"}>Female</MenuItem>
+					<MenuItem value={"unknown"}>Unknown</MenuItem>
+				</Select>
+			</FormControl>
 		</Card>
 	);
-};
 
-
-export default Filter;
+}

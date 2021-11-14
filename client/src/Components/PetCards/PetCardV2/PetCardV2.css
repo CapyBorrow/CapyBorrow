@@ -7,6 +7,9 @@
   margin-right: 2px;
   min-width: 300px;
 }
+.card-media {
+  width: 100%;
+}
 .card :hover {
   cursor: pointer;
 }
