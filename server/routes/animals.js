@@ -13,7 +13,7 @@ petFinderRoutes.get('/search', (req, res) => {
     .then(function (response) {
       var arr = []
       petFinderToken = response.data["access_token"];
-      axios.get(`https://www.petfinder.com/api/v2/animals?type=dog&page=1`,
+      axios.get(`https://www.petfinder.com/api/v2/animals?`,
         {
           headers: { Authorization: `Bearer ${petFinderToken}` }
         }).then(
