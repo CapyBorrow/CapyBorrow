@@ -1,6 +1,7 @@
 import { React, useEffect, useState, useContext } from 'react';
 import './App.css';
 import NavBar from './Components/topnav/NavBar';
+import SideNav from './Components/sidenav/SideNav';
 import { myContext } from "./Context";
 
 
@@ -22,6 +23,7 @@ const App = () => {
 		return (
 			<div className='App'>
 				<NavBar />
+				<SideNav />
 			</div>
 		);
 	}

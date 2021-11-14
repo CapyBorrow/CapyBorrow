@@ -1,0 +1,11 @@
+.sidenav-container {
+  height: calc(100% - 70px);
+  margin-top: 70px;
+  width: 65px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #494646;
+  color: white;
+  z-index: 0;
+}
