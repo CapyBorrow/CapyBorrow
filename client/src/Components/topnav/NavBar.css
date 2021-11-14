@@ -12,6 +12,7 @@
   color: white;
   z-index: 10;
   padding-top: 1px;
+  box-shadow: 3px 3px 3px 3px #888888;
 }
 .right-contents {
   margin-left: auto;

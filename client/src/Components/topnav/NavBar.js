@@ -6,17 +6,16 @@ import axios from 'axios';
 
 
 const NavBar = (props) => {
-	const [user, setUser] = useState(null);
+	const [pic, setPic] = useState(null);
 
 	useEffect(() => {
 		axios
 			.get("http://localhost:6868/auth/getuser", { withCredentials: true })
 			.then((res) => {
 				if (res.data) {
-					setUser(res.data);
+					setPic(res.data.thumbnail);
 				}
 			});
-		console.log(user);
 	}, []);
 
 	return (
@@ -27,7 +26,7 @@ const NavBar = (props) => {
 			</div>
 			<div className="right-contents">
 				<span className='logout-btn'><a className="logout-link" href="http://localhost:6868/auth/logout">Logout</a></span>
-				<img src='#' alt="oops" className="thumbnail" />
+				<img src={pic} alt="oops" className="thumbnail" />
 			</div>
 		</div>
 	)

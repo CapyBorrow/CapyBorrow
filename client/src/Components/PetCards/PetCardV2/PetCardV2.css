@@ -9,5 +9,4 @@
 }
 .card :hover {
   cursor: pointer;
-  min-width: 305px;
 }

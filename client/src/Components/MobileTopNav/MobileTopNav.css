@@ -6,6 +6,8 @@
   display: flex;
   vertical-align: baseline;
   z-index: 0;
+
+  box-shadow: 0px 1px 1px #8888;
 }
 .black-text {
   font-weight: bolder;
