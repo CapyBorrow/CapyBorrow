@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import {Card, CardActions, CardContent, CardMedia, Button, Typography, Grid} from '@material-ui/core';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
 import './Filter.css';
 
 function SelectLabelsSpecies() {
@@ -15,7 +15,7 @@ function SelectLabelsSpecies() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Species</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={species} label='Species' onChange={handleChange}>
 					<MenuItem value=''>
@@ -26,7 +26,7 @@ function SelectLabelsSpecies() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
@@ -38,7 +38,7 @@ function SelectLabelsBreed() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Breed</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={breed} label='Breed' onChange={handleChange}>
 					<MenuItem value=''>
@@ -49,7 +49,7 @@ function SelectLabelsBreed() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
@@ -61,7 +61,7 @@ function SelectLabelsAge() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={age} label='Age' onChange={handleChange}>
 					<MenuItem value=''>
@@ -72,7 +72,7 @@ function SelectLabelsAge() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
@@ -84,7 +84,7 @@ function SelectLabelsSize() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Size</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={size} label='Size' onChange={handleChange}>
 					<MenuItem value=''>
@@ -95,7 +95,7 @@ function SelectLabelsSize() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
@@ -107,7 +107,7 @@ function SelectLabelsGender() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Gender</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={gender} label='Gender' onChange={handleChange}>
 					<MenuItem value=''>
@@ -118,7 +118,7 @@ function SelectLabelsGender() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
@@ -130,7 +130,7 @@ function SelectLabelsColor() {
 	};
 	return (
 		<div>
-			<FormControl sx={{m: 2, minWidth: 250}}>
+			<FormControl sx={{ m: 2, minWidth: 200 }}>
 				<InputLabel id='demo-simple-select-helper-label'>Color</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={color} label='Color' onChange={handleChange}>
 					<MenuItem value=''>
@@ -141,12 +141,12 @@ function SelectLabelsColor() {
 					<MenuItem value={"Furry"}>Furry</MenuItem>
 				</Select>
 			</FormControl>
-            </div>
+		</div>
 	);
 }
 
-            {/*             
-            <FormControl sx={{m: 2, minWidth: 250}}>
+{/*             
+            <FormControl sx={{m: 2, minWidth: 200}}>
 				<InputLabel id='demo-simple-select-helper-label'>Breed</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={breed} label='Breed' onChange={handleChange}>
 					<MenuItem value=''>
@@ -157,7 +157,7 @@ function SelectLabelsColor() {
 					<MenuItem value={30}>Thirty</MenuItem>
 				</Select>
 			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 250}}>
+            <FormControl sx={{m: 2, minWidth: 200}}>
 				<InputLabel id='demo-simple-select-helper-label'>Age</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={age} label='Age' onChange={handleChange}>
 					<MenuItem value=''>
@@ -168,7 +168,7 @@ function SelectLabelsColor() {
 					<MenuItem value={30}>Thirty</MenuItem>
 				</Select>
 			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 250}}>
+            <FormControl sx={{m: 2, minWidth: 200}}>
 				<InputLabel id='demo-simple-select-helper-label'>Size</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={size} label='Size' onChange={handleChange}>
 					<MenuItem value=''>
@@ -179,7 +179,7 @@ function SelectLabelsColor() {
 					<MenuItem value={30}>Thirty</MenuItem>
 				</Select>
 			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 250}}>
+            <FormControl sx={{m: 2, minWidth: 200}}>
 				<InputLabel id='demo-simple-select-helper-label'>Gender</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={gender} label='Gender' onChange={handleChange}>
 					<MenuItem value=''>
@@ -190,7 +190,7 @@ function SelectLabelsColor() {
 					<MenuItem value={30}>Thirty</MenuItem>
 				</Select>
 			</FormControl>
-            <FormControl sx={{m: 2, minWidth: 250}}>
+            <FormControl sx={{m: 2, minWidth: 200}}>
 				<InputLabel id='demo-simple-select-helper-label'>Color</InputLabel>
 				<Select labelId='demo-simple-select-helper-label' id='demo-simple-select-helper' value={color} label='Color' onChange={handleChange}>
 					<MenuItem value=''>
@@ -207,11 +207,11 @@ const Filter = () => {
 	return (
 		<Card className="horizontalform">
 			<SelectLabelsSpecies />
-            <SelectLabelsBreed />
-            <SelectLabelsAge />
-            <SelectLabelsSize />
-            <SelectLabelsGender />
-            <SelectLabelsColor />
+			<SelectLabelsBreed />
+			<SelectLabelsAge />
+			<SelectLabelsSize />
+			<SelectLabelsGender />
+			<SelectLabelsColor />
 		</Card>
 	);
 };

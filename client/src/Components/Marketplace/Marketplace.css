@@ -1,18 +1,18 @@
 .market-container {
-	width: calc(100vw - 70px);
-	height: calc(100vh - 70px);
-	margin-left: 70px;
-	margin-top: 70px;
+  width: calc(100vw - 70px);
+  position: relative;
+  top: 70px;
+  left: 70px;
 }
 .detailtitle {
-	color: 'red';
+  color: "red";
 }
 .market-header {
-	color: #33ff99;
+  color: #33ff99;
 }
 
 .horizontalform {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }

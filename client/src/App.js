@@ -7,7 +7,18 @@ import { myContext } from "./Context";
 import PetCards from './Components/PetCards/PetCards.js';
 import MobileBottomNav from './Components/MobileBottomNav/MobileBottomNav';
 import MobileTopNav from './Components/MobileTopNav/MobileTopNav';
-import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import Bookmarks from './Components/Bookmarks/Bookmarks';
+import Settings from "./Components/Settings/Settings";
+// import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
+import {
+	BrowserRouter,
+	BrowserRouter as Router,
+	Redirect,
+	Route,
+	Switch,
+} from "react-router-dom";
+import Marketplace from './Components/Marketplace/Marketplace';
+
 
 const App = () => {
 	const userObj = useContext(myContext);
@@ -30,6 +41,15 @@ const App = () => {
 				(<div className="App">
 					<NavBar />
 					<SideNav />
+					<BrowserRouter>
+						<Switch >
+							<Route path="/lookup">
+								<Marketplace className="content" />
+							</Route>
+							<Route path="/settings" component={Settings} />
+							<Route path="/bookmarks" component={Bookmarks} />
+						</Switch>
+					</BrowserRouter>
 				</div>)
 		);
 	}

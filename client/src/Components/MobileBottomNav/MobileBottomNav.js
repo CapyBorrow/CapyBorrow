@@ -8,9 +8,9 @@ import './MobileBottomNav.css';
 const MobileBottomNav = () => {
     return (
         <div className="bottom-nav-container">
-            <a href="http:/localhost:3000/bookmarks" className="bottom-nav-link"><BookmarkIcon className="bottom-nav-icon" /></a>
-            <a href="http:/localhost:3000/lookup" className="bottom-nav-link"><SearchIcon className="bottom-nav-icon" /></a>
-            <a href="http:/localhost:3000/settings" className="bottom-nav-link"><SettingsIcon className="bottom-nav-icon" /></a>
+            <a href="/bookmarks" className="bottom-nav-link"><BookmarkIcon className="bottom-nav-icon" /></a>
+            <a href="/lookup" className="bottom-nav-link"><SearchIcon className="bottom-nav-icon" /></a>
+            <a href="/settings" className="bottom-nav-link"><SettingsIcon className="bottom-nav-icon" /></a>
         </div>
     )
 }

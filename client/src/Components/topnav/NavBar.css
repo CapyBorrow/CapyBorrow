@@ -11,6 +11,7 @@
   align-items: center;
   color: white;
   z-index: 10;
+  padding-top: 1px;
 }
 .right-contents {
   margin-left: auto;
