@@ -44,10 +44,11 @@ const App = () => {
 					<BrowserRouter>
 						<Switch >
 							<Route path="/lookup">
-								<Marketplace className="content" />
+								<Marketplace className="/content" />
 							</Route>
 							<Route path="/settings" component={Settings} />
 							<Route path="/bookmarks" component={Bookmarks} />
+							
 						</Switch>
 					</BrowserRouter>
 				</div>)

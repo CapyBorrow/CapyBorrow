@@ -6,6 +6,8 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import "./PetInfo.css";
+import "../animals.js";
+
 
 const bull = (
   <Box
@@ -17,56 +19,69 @@ const bull = (
 );
 
 const PetInfo = () => {
-  return <div>{BasicCard()}</div>;
+  return <div>{
+        BasicCard()
+    }</div>;
 };
 
 export default PetInfo;
 
 function BasicCard() {
+    var petName =  petFinderRoutes;
+
   return (
-//     <List sx={style} component="nav" aria-label="mailbox folders">
-//   <ListItem button>
-//     <ListItemText primary="Inbox" />
-//   </ListItem>
-//   <Divider />
-//   <ListItem button divider>
-//     <ListItemText primary="Drafts" />
-//   </ListItem>
-//   <ListItem button>
-//     <ListItemText primary="Trash" />
-//   </ListItem>
-//   <Divider light />
-//   <ListItem button>
-//     <ListItemText primary="Spam" />
-//   </ListItem>
-// </List>
-
-
-
-
-
-
-
-
-
 
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
-        <div class="container-1">
-          <div class="box-1">
-            <h3>Box One</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
-          <div class="box-2">
-            <h3>Box Two</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+        <div class="name">
+          <Typography variant = "h3" color = "text.secondary">
+                Name: petFinderRoutes('/search',(req, res))
+             
+              {/* Animal name here */}
+          </Typography>
         </div>
       </CardContent>
 
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+
+      <CardContent>
+          <div class = "age">
+          <Typography variant = "h3" color = "text.secondary">
+                Age
+            {/* Breed info here */}
+            </Typography>
+          </div>
+      </CardContent>
+
+        
+      <CardContent>
+          <div class = "breed">
+          <Typography variant = "h3" color = "text.secondary">
+                Breed
+            {/* Breed info here */}
+            </Typography>
+          </div>
+      </CardContent>
+
+      
+      <CardContent>
+          <div class = "health">
+          <Typography variant = "h3" color = "text.secondary">
+                Health
+            {/* health history info here */}
+            </Typography>
+          </div>
+      </CardContent>
+
+      
+      <CardContent>
+          <div class = "Additional Details">
+          <Typography variant = "h3" color = "text.secondary">
+                Additional Details
+            {/* additonal info here */}
+            </Typography>
+          </div>
+      </CardContent>
+
     </Card>
   );
 }

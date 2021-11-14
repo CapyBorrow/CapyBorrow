@@ -8,7 +8,7 @@ import './PetCards.css';
 const PetCards = () => {
 	//const classes = useStyles(); // Adding a classname={classes.<componentName styles in styles.js}
 	return (
-		<Grid className="grid-container" container justify='space-around' alignItems='stretch' spacing={1}>
+		<Grid className="grid-container" container justify='space-around' alignItems='stretch' spacing={20}>
 			<PetCardV2 />
 			<PetCardV2 />
             <PetCardV2 />
