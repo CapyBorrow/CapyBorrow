@@ -12,6 +12,9 @@ authRoutes.get('/logout', (req, res) => {
     req.logout();
     res.redirect("http://localhost:3000/login");
 });
+authRoutes.get('/getuser', (req, res) => {
+    req.user ? res.send(req.user) : res.send('no user');
+});
 
 authRoutes.get('/google', passport.authenticate('google', {
     scope: ['profile']

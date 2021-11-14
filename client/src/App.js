@@ -1,25 +1,36 @@
+import { React, useEffect, useState, useContext } from 'react';
 import './App.css';
-import NavBar from './Components/NavBar/NavBar';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+import NavBar from './Components/topnav/NavBar';
+import { myContext } from "./Context";
 
-import logo from '../src/images/logo2.png';
 
 const App = () => {
+
+	const userObj = useContext(myContext);
+	const [width, setWidth] = useState(window.innerWidth);
+	function handleWindowSizeChange() {
+		setWidth(window.innerWidth);
+	}
+	useEffect(() => {
+		window.addEventListener('resize', handleWindowSizeChange);
+		return () => {
+			window.removeEventListener('resize', handleWindowSizeChange);
+		}
+	}, []);
+
+	if (width > 768) {
+		return (
+			<div className='App'>
+				<NavBar />
+			</div>
+		);
+	}
 	return (
-		<div className='App'>
-			<AppBar position='static'>
-				<Toolbar variant='dense'>
-          <img src={logo}/>
-					<IconButton edge='start' color='inherit' aria-label='menu' sx={{mr: 2}}>
-						<MenuIcon />
-					</IconButton>
-				</Toolbar>
-			</AppBar>
+		<div>
+			<NavBar />
+
 		</div>
-	);
+	)
 };
 
 export default App;

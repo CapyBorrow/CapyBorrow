@@ -6,9 +6,7 @@ client/.pnp
 client/.pnp.js
 /server/node_modules
 /client/node_modules
-
-
-
+/backend/env
 # testing
 /coverage
 
@@ -65,3 +63,4 @@ ehthumbs.db
 Thumbs.db
 
 client/node_modules/@babel/runtime/helpers/classCallCheck.js
+server/.env
