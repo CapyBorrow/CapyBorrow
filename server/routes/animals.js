@@ -30,3 +30,6 @@ petFinderRoutes.get('/search',(req, res) => {
   res.send(arr)
 });
 })
+
+module.exports = petFinderRoutes;
+
