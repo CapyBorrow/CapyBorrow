@@ -1,0 +1,26 @@
+.page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+  }
+
+  .container-1{
+    display:flex;  
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+
+  .container-2{
+    display:flex;  
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
