@@ -14,7 +14,9 @@
 }
 .right-contents {
   margin-left: auto;
-  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .left-contents {
   display: flex;
@@ -24,8 +26,12 @@
 }
 .logout-btn {
   background-color: #33ff99;
-  padding: 5px;
+  padding: 10px 20px;
   border-radius: 10px;
+  margin-right: 10px;
+}
+.logout-btn:hover {
+  transform: scale(1.1);
 }
 .logout-link {
   text-decoration: none;
@@ -39,6 +45,10 @@
 }
 .logo-header {
   margin-left: 10px;
-  font-weight: 400;
-  font-size: x-large;
+  font-weight: 600;
+  font-size: xx-large;
+}
+.thumbnail {
+  border-radius: 100%;
+  transform: scale(0.5);
 }

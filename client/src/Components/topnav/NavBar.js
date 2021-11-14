@@ -1,14 +1,24 @@
-import { React, useContext, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
 import './NavBar.css';
 import logo from '../../images/capyborrow_logo_v1.jpg';
-import { myContext } from "../../Context.js";
+import axios from 'axios';
 
 
-const NavBar = () => {
-	const userObj = useContext(myContext);
+
+const NavBar = (props) => {
+	const [user, setUser] = useState(null);
+
 	useEffect(() => {
-		console.log(userObj);
-	}, [])
+		axios
+			.get("http://localhost:6868/auth/getuser", { withCredentials: true })
+			.then((res) => {
+				if (res.data) {
+					setUser(res.data);
+				}
+			});
+		console.log(user);
+	}, []);
+
 	return (
 		<div className="nav-container">
 			<div className="left-contents">
@@ -17,7 +27,7 @@ const NavBar = () => {
 			</div>
 			<div className="right-contents">
 				<span className='logout-btn'><a className="logout-link" href="http://localhost:6868/auth/logout">Logout</a></span>
-				<img src='#' />
+				<img src='#' alt="oops" className="thumbnail" />
 			</div>
 		</div>
 	)

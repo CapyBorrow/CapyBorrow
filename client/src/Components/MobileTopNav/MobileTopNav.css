@@ -1,0 +1,26 @@
+.mobile-top-container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  vertical-align: baseline;
+  z-index: 0;
+}
+.black-text {
+  font-weight: bolder;
+  font-size: xx-large;
+  color: rgb(78, 74, 74);
+  margin-right: auto;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.other-text {
+  color: #33ff99;
+}
+.mobile-top-icon {
+  color: rgb(78, 74, 74);
+  transform: scale(1.7);
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+}
