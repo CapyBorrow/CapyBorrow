@@ -16,3 +16,15 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 600px) {
+  .market-container {
+    width: 100%;
+    align-items: center;
+    display: block;
+    margin: auto;
+    left: 0;
+    justify-content: center;
+  }
+  .cards {
+  }
+}

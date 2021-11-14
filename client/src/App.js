@@ -48,7 +48,6 @@ const App = () => {
 							</Route>
 							<Route path="/settings" component={Settings} />
 							<Route path="/bookmarks" component={Bookmarks} />
-							
 						</Switch>
 					</BrowserRouter>
 				</div>)
@@ -56,8 +55,17 @@ const App = () => {
 	}
 	return ( //Mobile version
 		userObj === "no user" ? <Landing /> :
-			(<div className="App">
-				<MobileTopNav />
+			(<div className="mobile-app">
+				<MobileTopNav className="app-nav" />
+				<BrowserRouter>
+					<Switch >
+						<Route path="/lookup">
+							<Marketplace className="/content" />
+						</Route>
+						<Route path="/settings" component={Settings} />
+						<Route path="/bookmarks" component={Bookmarks} />
+					</Switch>
+				</BrowserRouter>
 				<MobileBottomNav />
 			</div>)
 	)

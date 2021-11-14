@@ -28,7 +28,7 @@ const Marketplace = () => {
 			<div className="horizontalform">
 				<Filter />
 			</div>
-			<PetCards pets={data} />
+			<PetCards pets={data} className="cards" />
 		</div>
 	);
 };
