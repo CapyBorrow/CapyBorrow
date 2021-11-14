@@ -35,7 +35,6 @@ export default function RecipeReviewCard() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -44,9 +43,9 @@ export default function RecipeReviewCard() {
         image={'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80'}
         alt="Paella dish"
       />
-      <CardContent>
+      <CardContent className="name">
         <Typography variant="h3" color="text.secondary">
-          Doge
+          Name
         </Typography>
       </CardContent>
       <CardContent>
