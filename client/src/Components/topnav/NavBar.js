@@ -1,8 +1,14 @@
-import React from 'react';
+import { React, useContext, useEffect } from 'react';
 import './NavBar.css';
 import logo from '../../images/capyborrow_logo_v1.jpg';
+import { myContext } from "../../Context.js";
+
 
 const NavBar = () => {
+	const userObj = useContext(myContext);
+	useEffect(() => {
+		console.log(userObj);
+	}, [])
 	return (
 		<div className="nav-container">
 			<div className="left-contents">

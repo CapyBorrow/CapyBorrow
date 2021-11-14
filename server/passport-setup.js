@@ -21,11 +21,10 @@ passport.use(
         callbackURL: '/auth/google/redirect'
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
-        console.log(profile);
         User.findOne({ googleId: profile.id }).then((currentUser) => {
             if (currentUser) {
                 // already have this user
-                console.log('user is: ', currentUser);
+                console.log('user found in mongodb: ', currentUser);
                 done(null, currentUser);
             } else {
                 // if not, create user in our db
