@@ -1,0 +1,17 @@
+.bottom-nav-container {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #494646;
+}
+.bottom-nav-link {
+  padding: 10px;
+}
+.bottom-nav-icon {
+  transform: scale(1.5);
+  color: white;
+}

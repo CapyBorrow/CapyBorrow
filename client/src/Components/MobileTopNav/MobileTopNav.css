@@ -18,9 +18,9 @@
 .other-text {
   color: #33ff99;
 }
-.mobile-top-icon {
-  color: rgb(78, 74, 74);
-  transform: scale(1.7);
-  margin-top: 1.5rem;
-  margin-right: 1.5rem;
+.top-profile {
+  transform: scale(0.5);
+  margin-top: -0.5rem;
+  margin-right: -0.5rem;
+  border-radius: 100%;
 }

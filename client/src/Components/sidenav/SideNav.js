@@ -12,15 +12,15 @@ const SideNav = () => {
         <div className="sidenav-container">
 
             <MenuIcon className="hamburger" />
-            <a href="#" className="icon-block">
+            <a href="http://localhost:3000/lookup" className="icon-block">
                 <span className="icon-caption">Search</span>
                 <SearchIcon className="icon" />
             </a>
-            <a href="#" className="icon-block">
+            <a href="http://localhost:3000/bookmarks" className="icon-block">
                 <span className="icon-caption">Bookmarks</span>
                 <BookmarkIcon className="icon" />
             </a>
-            <a href="#" className="icon-block">
+            <a href="http://localhost:3000/settings" className="icon-block">
                 <span className="icon-caption">Settings</span>
                 <SettingsIcon className="icon" />
             </a>

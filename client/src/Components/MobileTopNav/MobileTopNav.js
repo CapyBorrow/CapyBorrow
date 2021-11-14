@@ -1,22 +1,19 @@
-import React from 'react'
-import MenuIcon from '@mui/icons-material/Menu';
+import { React, useContext } from 'react';
+import { myContext } from '../../Context';
 import './MobileTopNav.css';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
-import SearchIcon from '@mui/icons-material/Search';
-import { SwipeableDrawer } from '@mui/material';
-// import IconButton from "@material-ui/core";
-// import IconButton from '@mui/icon-material/IconButton';
 
 const MobileTopNav = () => {
+    const userObj = useContext(myContext);
 
-
+    // const getPicture = () => {
+    //     if (userObj.thumbnail)
+    //         return (userObj.thumbnail)
+    //     return null;
+    // }
     return (
         <div className="mobile-top-container">
-            <SwipeableDrawer />
             <span className="black-text"><span className="other-text">C</span>apy<span className="other-text">C</span>are</span>
-            {/* <IconButton> */}
-            <MenuIcon className="mobile-top-icon" />
-            {/* </IconButton> */}
+            <img className="top-profile" src='#' alt="none" />
         </div>
     );
 }
