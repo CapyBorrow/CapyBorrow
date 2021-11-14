@@ -1,19 +1,22 @@
-import React from 'react'
-import { Grid } from '@material-ui/core';
-import PetCard from './PetCard/PetCard.js';
+import React from 'react';
+import {Grid} from '@material-ui/core';
+import PetCardV2 from './PetCardV2/PetCardV2.js';
 
 // Importing styles (basically CSS in JS)
-import useStyles from "./styles";
+//import useStyles from './styles';
 
 const PetCards = () => {
-    const classes = useStyles(); // Adding a classname={classes.<componentName styles in styles.js}
-    return (
-        <Grid>
-            <PetCard />
-            <PetCard />
-            <PetCard />
-        </Grid>
-    )
-}
+	//const classes = useStyles(); // Adding a classname={classes.<componentName styles in styles.js}
+	return (
+		<Grid container justify='space-between' alignItems='stretch' spacing={1}>
+			<PetCardV2 />
+			<PetCardV2 />
+            <PetCardV2 />
+            <PetCardV2 />
+            <PetCardV2 />
+            <PetCardV2 />
+		</Grid>
+	);
+};
 
-export default PetCards
+export default PetCards;
