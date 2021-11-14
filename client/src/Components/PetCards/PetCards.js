@@ -14,7 +14,7 @@ const PetCards = (props) => {
         let res = [];
         for (let i = 0; i < arr.length; i++) {
             if (arr[i].photos[0])
-                res[i] = (<PetCardV2 name={arr[i].name} breed={arr[i].breeds.primary} age={arr[i].age} photo={arr[i].photos[0].small} />)
+                res[i] = (<PetCardV2 name={arr[i].name} breed={arr[i].breeds.primary} age={arr[i].age} photo={arr[i].photos[0].large} />)
             // console.log(arr[i].primary_photo_cropped.small);
             // console.log(arr[i].name);
             console.log(arr[i].photos[0])

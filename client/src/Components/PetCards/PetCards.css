@@ -1,5 +1,9 @@
 .grid-container {
+	grid-gap: 10px;
 	margin: 0 20px;
-	margin-top: 5rem;
+	margin-top: 0rem;
+	margin-bottom: 10 rem;
 	margin-right: 20px;
+	padding: 10 
+	
 }

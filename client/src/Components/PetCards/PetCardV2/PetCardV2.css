@@ -5,4 +5,9 @@
   margin-top: 10px;
   margin-left: 2px;
   margin-right: 2px;
+  min-width: 300px;
+}
+.card :hover {
+  cursor: pointer;
+  min-width: 305px;
 }
