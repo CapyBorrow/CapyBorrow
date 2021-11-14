@@ -16,6 +16,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 //import MoreVertIcon from '@mui/icons-material/MoreVert';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 
+// Importing styles (basically CSS in JS)
+import useStyles from "./styles";
+
 import './PetCardV2.css';
 
 const ExpandMore = styled((props) => {
@@ -30,20 +33,21 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard() {
+  const classes = useStyles(); // Adding a classname={classes.<componentName styles in styles.js}
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={classes.card} sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="194"
         image={'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80'}
         alt="Paella dish"
       />
-      <CardContent className="name">
+      <CardContent className={classes.title}>
         <Typography variant="h3" color="text.secondary">
           Name
         </Typography>
