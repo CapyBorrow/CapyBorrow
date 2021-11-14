@@ -63,7 +63,7 @@ app.use(
 app.set("trust proxy", 1);
 //ROUTES:
 app.use("/auth", authRoutes);
-app.use("/pets", petFinderRoutes)
+app.use("/pets", petFinderRoutes);
 app.use(express.urlencoded({ extended: false }));
 
 app.listen(PORT, () => console.log("Listening on PORT:", PORT));

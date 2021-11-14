@@ -29,41 +29,42 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} className="card">
       <CardMedia
         component="img"
         height="194"
-        image={'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80'}
+        image={props.photo}
+        // image={'https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80'}
         alt="Paella dish"
       />
       <CardContent className="name">
         <Typography variant="h3" color="text.secondary">
-          Name
+          {props.name}
         </Typography>
       </CardContent>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Breed
+          {props.breed}
         </Typography>
       </CardContent>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-          Age
+          Age: {props.age}
         </Typography>
       </CardContent>
-        <IconButton aria-label="add to favorites">
-          <BookmarkBorderIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+      <IconButton aria-label="add to favorites">
+        <BookmarkBorderIcon />
+      </IconButton>
+      <IconButton aria-label="share">
+        <ShareIcon />
+      </IconButton>
     </Card>
   );
 }
